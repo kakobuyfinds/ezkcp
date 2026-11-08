@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#263b36">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <title>Sugargoo spreadsheet – Mode entdecken &amp; bewusst vergleichen</title>
+  <meta name="description" content="Sugargoo spreadsheet verständlich erklärt: Kategorien entdecken, Größen und QC-Fotos vergleichen und Produktlinks mit einer klaren Checkliste prüfen.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Sugargoo spreadsheet – Dein Leitfaden für durchdachte Finds">
+  <meta property="og:description" content="Von Sneakers bis Accessoires: Kategorien, praktische Vergleichstipps und klare Antworten für deine nächste Auswahl.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1580140485763-63776b9cba67?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Sugargoo spreadsheet – Mode bewusst vergleichen">
+  <meta name="twitter:description" content="Kategorien entdecken, Maße prüfen und Produktinformationen besser einordnen.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1580140485763-63776b9cba67?auto=format&amp;fit=crop&amp;w=1200&amp;q=80">
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <style>
+    :root{--paper:#f5f1e8;--ink:#263b36;--muted:#59685f;--line:#d5d9cb;--accent:#e2ed9d;--white:#fffef9;--orange:#a64a2d}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:inherit;text-decoration-thickness:1px;text-underline-offset:4px}
+    a:hover{text-decoration:underline}
+    a:focus-visible,summary:focus-visible{outline:3px solid var(--orange);outline-offset:5px}
+    img{display:block;width:100%;height:auto;background:#e5e3d9}
+    h1,h2,h3,p,figure{margin:0}
+    h1,h2,h3{line-height:1.13;letter-spacing:-.035em}
+    h1{font-size:clamp(2.7rem,6vw,5.4rem);font-weight:650;max-width:850px}
+    h2{font-size:clamp(1.9rem,3.8vw,3rem);font-weight:600}
+    h3{font-size:1.26rem;letter-spacing:-.02em}
+    p+p{margin-top:1rem}
+    .wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+    .top{border-bottom:1px solid var(--line)}
+    .header{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:800;font-size:1.15rem;letter-spacing:-.035em;text-decoration:none}
+    .brand span{display:block;font-size:.64rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;margin-top:1px}
+    .header-note{font-size:.8rem;color:var(--muted)}
+    .small-link{font-size:.85rem;font-weight:650}
+    .eyebrow{font-size:.73rem;font-weight:750;letter-spacing:.15em;text-transform:uppercase}
+    .categories{padding:25px 0 29px;border-bottom:1px solid var(--line)}
+    .category-heading{display:flex;justify-content:space-between;gap:15px;align-items:baseline;margin-bottom:13px}
+    .category-heading p{color:var(--muted);font-size:.8rem}
+    .category-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+    .category-grid a{background:var(--white);border:1px solid var(--line);padding:12px 13px;text-decoration:none;font-size:.83rem;font-weight:600;display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:49px}
+    .category-grid a::after{content:"↗";font-size:1rem;color:var(--orange)}
+    .category-grid a:hover{background:var(--accent)}
+    .hero{padding:56px 0 0}
+    .hero .eyebrow{color:var(--orange);margin-bottom:18px}
+    .hero-bottom{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:end;margin:28px 0 36px}
+    .lead{font-size:1.08rem;max-width:610px}
+    .hero-actions{display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+    .button{display:inline-flex;align-items:center;justify-content:space-between;gap:35px;background:var(--ink);color:var(--white);padding:15px 22px;text-decoration:none;font-weight:650;font-size:.92rem}
+    .button:hover{background:#3b5148;text-decoration:none}
+    .note{font-size:.77rem;line-height:1.55;color:var(--muted)}
+    .visual{position:relative;background:#d7c9b4}
+    .visual img{height:440px;object-fit:cover;object-position:center 55%}
+    .visual figcaption{position:absolute;bottom:20px;left:20px;max-width:330px;background:var(--paper);padding:15px 18px;font-size:.8rem;line-height:1.5}
+    .intro{display:grid;grid-template-columns:.75fr 1.6fr;gap:70px;padding:60px 0;border-bottom:1px solid var(--line)}
+    .intro .eyebrow{color:var(--orange);margin-bottom:14px}
+    .intro p{max-width:720px}
+    .answer{font-size:1.17rem}
+    .section{padding:65px 0}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
+    .section-head p{max-width:390px;color:var(--muted);font-size:.94rem}
+    .topics{display:grid;grid-template-columns:repeat(3,1fr);gap:23px}
+    .topic{border-top:2px solid var(--ink);padding-top:18px}
+    .number{font-size:.75rem;color:var(--orange);font-weight:750;display:block;margin-bottom:22px}
+    .topic h3{margin-bottom:15px}
+    .topic p{font-size:.94rem;color:var(--muted)}
+    .topic ul{padding-left:19px;font-size:.9rem;margin:19px 0}
+    .topic li{margin-bottom:7px}
+    .topic a{font-size:.86rem;font-weight:700}
+    .feature{display:grid;grid-template-columns:1fr 1fr;background:var(--ink);color:var(--white)}
+    .feature figure{height:100%;min-height:440px}
+    .feature img{height:100%;min-height:440px;object-fit:cover}
+    .feature-copy{padding:46px}
+    .feature .eyebrow{color:var(--accent);margin-bottom:17px}
+    .feature h2{margin-bottom:22px}
+    .feature p{font-size:.94rem;color:#e2e7dc}
+    .feature ol{padding-left:22px;margin:25px 0 0}
+    .feature li{padding-left:6px;margin-bottom:16px;font-size:.9rem}
+    .feature li strong{display:block;color:var(--accent)}
+    .table-wrap{overflow-x:auto}
+    table{border-collapse:collapse;width:100%;text-align:left;font-size:.91rem}
+    caption{text-align:left;color:var(--muted);padding-bottom:18px}
+    th,td{padding:18px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+    th{background:#e8ebde;font-weight:700}
+    td:first-child{font-weight:650;min-width:150px}
+    .journal{display:grid;grid-template-columns:1fr 1fr;gap:35px}
+    .journal article{background:var(--white);padding:32px;border:1px solid var(--line)}
+    .journal .eyebrow{color:var(--orange);margin-bottom:18px}
+    .journal h3{font-size:1.5rem;margin-bottom:19px}
+    .journal p{font-size:.94rem;color:var(--muted)}
+    .faq{display:grid;grid-template-columns:.8fr 1.4fr;gap:70px;border-top:1px solid var(--line)}
+    .faq h2{margin:13px 0 20px}
+    details{border-bottom:1px solid var(--line);padding:19px 0}
+    summary{cursor:pointer;font-size:1rem;font-weight:650;padding-right:10px}
+    details p{padding:14px 20px 0 0;color:var(--muted);font-size:.94rem}
+    .closing{padding:38px;background:var(--accent);display:flex;align-items:center;justify-content:space-between;gap:25px;margin-bottom:60px}
+    .closing h2{font-size:1.8rem;margin-bottom:9px}
+    .closing p{font-size:.9rem;max-width:650px}
+    footer{border-top:1px solid var(--line);padding:28px 0 36px}
+    .footer-row{display:flex;justify-content:space-between;gap:25px;align-items:start}
+    footer p{max-width:720px;font-size:.75rem;color:var(--muted)}
+    @media(min-width:1500px){.visual img{height:500px}}
+    @media(max-width:800px){
+      .header-note{display:none}
+      .category-grid{grid-template-columns:repeat(3,1fr)}
+      .hero-bottom{gap:25px}
+      .hero-actions{align-items:flex-start}
+      .intro,.faq{grid-template-columns:1fr;gap:26px}
+      .topics{grid-template-columns:1fr;gap:32px}
+      .number{margin-bottom:12px}
+      .feature-copy{padding:30px}
+      .section-head{display:block}
+      .section-head p{margin-top:18px}
+      .visual img{height:360px}
+    }
+    @media(max-width:560px){
+      .wrap{width:calc(100% - 32px)}
+      .header{min-height:76px}
+      .brand{font-size:1rem}
+      .small-link{font-size:.76rem}
+      .category-grid{grid-template-columns:1fr 1fr}
+      .category-grid a{font-size:.75rem;padding:11px}
+      .category-heading{display:block}
+      .category-heading p{margin-top:5px}
+      .hero{padding-top:37px}
+      .hero-bottom,.feature,.journal{grid-template-columns:1fr}
+      .hero-actions{gap:10px}
+      .hero-bottom{margin-bottom:25px}
+      .visual img{height:330px}
+      .visual figcaption{left:12px;right:12px;bottom:12px;max-width:none;font-size:.73rem}
+      .intro{padding:40px 0}
+      .section{padding:43px 0}
+      .feature figure,.feature img{min-height:0;height:300px}
+      .feature-copy{padding:27px}
+      .journal article{padding:25px}
+      .closing{display:block;padding:26px;margin-bottom:40px}
+      .closing .button{margin-top:22px}
+      .footer-row{display:block}
+      footer p{margin-top:14px}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@graph":[
+      {
+        "@type":"WebPage",
+        "@id":"#webpage",
+        "name":"Sugargoo spreadsheet – Mode entdecken und bewusst vergleichen",
+        "description":"Ein deutschsprachiger Leitfaden zu Produktlisten, Kategorien, Größen, QC-Fotos und nachvollziehbaren Kaufentscheidungen.",
+        "inLanguage":"de",
+        "mainEntity":{"@id":"#guide"}
+      },
+      {
+        "@type":"Article",
+        "@id":"#guide",
+        "headline":"Sugargoo spreadsheet: Von der Inspiration zur geprüften Auswahl",
+        "inLanguage":"de",
+        "description":"Praktische Hinweise zum Vergleichen von Sneakers, Bekleidung und Accessoires anhand von Maßen, Produktdetails und Gesamtkosten.",
+        "about":[
+          {"@type":"Thing","name":"Sugargoo spreadsheet"},
+          {"@type":"Thing","name":"Größentabellen"},
+          {"@type":"Thing","name":"QC-Fotos"},
+          {"@type":"Thing","name":"Produktvergleich"}
+        ],
+        "hasPart":[
+          {
+            "@type":"Article",
+            "headline":"So wird aus einem Fund eine brauchbare Vergleichszeile",
+            "inLanguage":"de",
+            "abstract":"Produktname, ursprünglichen Link, Variante, Maße, Preiswährung und Prüfdatum festhalten; fehlende Angaben vor dem Kauf klären."
+          },
+          {
+            "@type":"Article",
+            "headline":"Ein stimmiger Look braucht keine lange Einkaufsliste",
+            "inLanguage":"de",
+            "abstract":"Mit einem Schwerpunkt beginnen und Farben, Proportionen sowie vorhandene Kleidung berücksichtigen."
+          }
+        ]
+      },
+      {
+        "@type":"FAQPage",
+        "@id":"#faq",
+        "inLanguage":"de",
+        "mainEntity":[
+          {
+            "@type":"Question",
+            "name":"Was ist ein Sugargoo spreadsheet?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Ein Sugargoo spreadsheet ist eine strukturierte Sammlung von Produktlinks und Vergleichsangaben. Sie kann bei der Vorauswahl helfen, ersetzt aber weder die aktuelle Produktseite noch die Prüfung des konkreten Angebots."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Ist diese Seite ein offizielles Angebot von Sugargoo?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Nein. Diese Seite ist ein unabhängiger deutschsprachiger Leitfaden. Die Kategorie-Links führen zu hipobuyfind.com; eine offizielle Verbindung zu Sugargoo oder den genannten Marken wird nicht behauptet."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Wie finde ich die passende Größe?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Vergleiche die angegebenen Zentimetermaße mit einem gut passenden eigenen Kleidungsstück. Bei Schuhen helfen Fußlänge und eine modellspezifische Größentabelle. Eine Größenbezeichnung allein reicht nicht aus."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Beweisen QC-Fotos die Echtheit eines Artikels?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Nein. QC-Fotos können sichtbare Details wie Nähte, Farbe und Verarbeitung zeigen. Sie ersetzen keinen belastbaren Herkunfts- oder Echtheitsnachweis."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Ist der Listenpreis bereits der Gesamtpreis?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Nicht unbedingt. Berücksichtige zusätzlich gegebenenfalls Versand, Service- und Zahlungsgebühren sowie mögliche Einfuhrabgaben. Prüfe die aktuellen Angaben beim jeweiligen Anbieter."
+            }
+          },
+          {
+            "@type":"Question",
+            "name":"Kann ich jeden gefundenen Markenartikel über Sugargoo bestellen?",
+            "acceptedAnswer":{
+              "@type":"Answer",
+              "text":"Das lässt sich aus einer Produktliste nicht ableiten. Prüfe die aktuellen Annahmebedingungen, Markenbeschränkungen und Versandmöglichkeiten direkt beim jeweiligen Dienst, bevor du bezahlst."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/ezkcp/">
+</head>
+<body>
+  <!--
+    Dateiname: index.html
+    Recherchehinweis: Die direkte Bing-Ergebnisseite war nicht abrufbar.
+    Die folgenden zehn Domains wurden über die verfügbare Websuche ausgewertet;
+    ihre Reihenfolge ist keine verifizierte Bing-Platzierung.
+    Themen wurden eigenständig formuliert; fremde Bestands-, Preis-,
+    Bewertungs- und Aktualitätsbehauptungen wurden nicht übernommen.
+
+    1. sugargo.net: Kategorien, Produktlisten, Vergleich
+    2. sugargooo.com: Produktsuche, Bekleidung, Quelllinks
+    3. sugargoo.org: Markenbezeichnungen, Kategorien, Preiswährungen
+    4. sugargoox.com/en/spreadsheet: Suchfilter, Fotos, Listenansicht
+    5. rep.tools/guides/sugargoo-spreadsheet: Originallinks, Linkprüfung
+    6. spreadsheet-sugargoo.com: Kategorienavigation, Schuhe, Accessoires
+    7. sugagoo.com: QC-Fotos, Produktdetails, unabhängige Einordnung
+    8. sheetsugargoo.com: Streetwear, Kategorien, Bekleidungslinks
+    9. sugargoo.io: Größen, QC-Bilder, Auswahl nach Produkttyp
+    10. sugargoo-spreadsheets.org: Einkaufsablauf, Versandfragen, FAQ
+
+    Sekundäre Suchintentionen:
+    Sugargoo Finds; Sugargoo QC-Fotos; Sugargoo Größenberatung;
+    Sugargoo Produktlinks; Sugargoo Einkaufsguide.
+
+    Longtail-Themen, in den sichtbaren Ratgebertext integriert:
+    Sugargoo spreadsheet auf Deutsch; Produktlinks prüfen;
+    Sneakers nach Fußlänge auswählen; Größentabellen vergleichen;
+    Hoodie Brustweite messen; T-Shirt Länge vergleichen;
+    Jacken mit Bewegungszugabe wählen; Hosen Bundweite prüfen;
+    Shorts Innenbeinlänge vergleichen; Kopfumfang für Caps messen;
+    Sets getrennt vermessen; Unterwäsche Material prüfen;
+    Trikots nach Passform auswählen; Accessoires Maße vergleichen;
+    QC-Fotos richtig lesen; Detailbilder von Nähten prüfen;
+    Produktvarianten unterscheiden; Farbabweichungen einordnen;
+    Herkunftsnachweise prüfen; Listenpreise einordnen;
+    Versandkosten berücksichtigen; Gesamtkosten vergleichen;
+    alte Produktlinks erkennen; Quelllinks dokumentieren;
+    Materialangaben vergleichen; kleine Auswahl zusammenstellen;
+    Markenbeschränkungen prüfen; Versandmöglichkeiten prüfen.
+
+    Externe Bilder dienen ausschließlich als redaktionelle Stilillustration.
+    Keine behauptete Verfügbarkeit oder Echtheitsprüfung der abgebildeten Artikel.
+  -->
+
+  <header class="top">
+    <div class="wrap header">
+      <a class="brand" href="https://www.hipobuyfind.com">
+        hipobuyfind.com
+        <span>Mode · Auswahl · Orientierung</span>
+      </a>
+      <p class="header-note">Ein klarer Blick auf deine nächste Auswahl.</p>
+      <a class="small-link" href="https://www.hipobuyfind.com">Kollektion entdecken ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <nav class="categories" aria-label="Produktkategorien bei HipobuyFind">
+      <div class="wrap">
+        <div class="category-heading">
+          <p class="eyebrow">Direkt zur Kategorie</p>
+          <p>Alle Kategorien öffnen sich bei HipobuyFind.</p>
+        </div>
+        <div class="category-grid">
+          <a href="https://hipobuyfind.com/category-911-Shoes.html" aria-label="Shoes – Schuhe entdecken">Shoes</a>
+          <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html" aria-label="Hoodies und Pullover entdecken">Hoodies/Sweaters</a>
+          <a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-Shirts</a>
+          <a href="https://hipobuyfind.com/category-914-Jackets.html" aria-label="Jackets – Jacken entdecken">Jackets</a>
+          <a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html" aria-label="Hosen und Shorts entdecken">Pants/Shorts</a>
+          <a href="https://hipobuyfind.com/category-916-Headwear.html" aria-label="Headwear – Kopfbedeckungen entdecken">Headwear</a>
+          <a href="https://hipobuyfind.com/category-917-Sets.html">Sets</a>
+          <a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html" aria-label="Unterwäsche entdecken">Underwear/underpants</a>
+          <a href="https://hipobuyfind.com/category-919-Jersey.html" aria-label="Jersey – Trikots entdecken">Jersey</a>
+          <a href="https://hipobuyfind.com/category-920-Accessories.html" aria-label="Accessories – Accessoires entdecken">Accessories</a>
+        </div>
+      </div>
+    </nav>
+
+    <section class="hero wrap" aria-labelledby="hero-title">
+      <p class="eyebrow">Der deutschsprachige Auswahlguide</p>
+      <h1 id="hero-title">Sugargoo spreadsheet.<br>Mit Stil auswählen.<br>Mit Überblick vergleichen.</h1>
+      <div class="hero-bottom">
+        <p class="lead">Ein guter Fund beginnt mit einer Idee. Eine gute Entscheidung entsteht durch passende Maße, verständliche Produktangaben und einen Blick auf die Gesamtkosten.</p>
+        <div class="hero-actions">
+          <a class="button" href="https://www.hipobuyfind.com">Finds bei HipobuyFind ansehen <span aria-hidden="true">↗</span></a>
+          <p class="note">Unabhängiger Ratgeber · Keine offizielle Markenvertretung</p>
+        </div>
+      </div>
+      <figure class="visual">
+        <img src="https://images.unsplash.com/photo-1580140485763-63776b9cba67?auto=format&amp;fit=crop&amp;w=1440&amp;q=80"
+             srcset="https://images.unsplash.com/photo-1580140485763-63776b9cba67?auto=format&amp;fit=crop&amp;w=640&amp;q=75 640w, https://images.unsplash.com/photo-1580140485763-63776b9cba67?auto=format&amp;fit=crop&amp;w=1000&amp;q=80 1000w, https://images.unsplash.com/photo-1580140485763-63776b9cba67?auto=format&amp;fit=crop&amp;w=1440&amp;q=80 1440w"
+             sizes="(max-width: 1228px) calc(100vw - 48px), 1180px"
+             width="1440" height="900"
+             alt="High-Top-Sneakers mit Nike-Swoosh und Louis-Vuitton-Monogramm auf einem gemusterten Koffer"
+             fetchpriority="high" decoding="async">
+        <figcaption>Stilinspiration: markante Sneaker, warme Brauntöne und Monogramm-Details. Das Bild ist keine Aussage über verfügbare Angebote.</figcaption>
+      </figure>
+    </section>
+
+    <section class="intro wrap" aria-labelledby="intro-title">
+      <div>
+        <p class="eyebrow">Zuerst die Einordnung</p>
+        <h2 id="intro-title">Was steckt hinter der Liste?</h2>
+      </div>
+      <div>
+        <p class="answer">Ein <strong>Sugargoo spreadsheet</strong> ist eine strukturierte Sammlung von Produktlinks und Vergleichsangaben. Sie kann bei der Vorauswahl helfen, ersetzt aber weder die aktuelle Produktseite noch die Prüfung des konkreten Angebots.</p>
+        <p>Wer nach <strong>Sugargoo Finds</strong> sucht, möchte häufig schnell zwischen Schuhen, Streetwear und Accessoires wechseln. Nutze Kategorien als Einstieg und betrachte Bilder als Orientierung. Entscheidend bleiben die gewählte Variante, nachvollziehbare Maße und die Angaben des jeweiligen Anbieters.</p>
+        <p class="note">Die Links dieser Seite führen zu HipobuyFind. Hier wird weder eine offizielle Sugargoo-Tabelle noch die Bestellbarkeit bestimmter Marken versprochen.</p>
+      </div>
+    </section>
+
+    <section class="section wrap" aria-labelledby="selection-title">
+      <div class="section-head">
+        <h2 id="selection-title">Drei Perspektiven.<br>Eine bessere Auswahl.</h2>
+        <p>Vom auffälligen Sneaker bis zum ruhigen Basic: Vergleiche zuerst die Eigenschaften, die du später tatsächlich spürst.</p>
+      </div>
+      <div class="topics">
+        <article class="topic">
+          <span class="number">01 / SNEAKERS</span>
+          <h3>Die Silhouette gefällt.<br>Passt auch der Schuh?</h3>
+          <p>Bei Nike-inspirierten Looks oder anderen sportlichen Formen entscheidet nicht allein die EU-Größe. Fußlänge, Leistenform und das konkrete Modell gehören zusammen.</p>
+          <ul>
+            <li>Beide Füße messen und den längeren berücksichtigen.</li>
+            <li>Die modellspezifische Größentabelle lesen.</li>
+            <li>Obermaterial, Sohle und Verschluss vergleichen.</li>
+          </ul>
+          <a href="https://hipobuyfind.com/category-911-Shoes.html">Schuhe vergleichen ↗</a>
+        </article>
+        <article class="topic">
+          <span class="number">02 / BEKLEIDUNG</span>
+          <h3>Proportionen vor<br>Größenbuchstaben.</h3>
+          <p>Ein Oversize-Hoodie und ein gerades T-Shirt brauchen unterschiedliche Maße. Für die Sugargoo Größenberatung ist der Vergleich mit einem eigenen, gut sitzenden Teil besonders hilfreich.</p>
+          <ul>
+            <li>Brustweite und Gesamtlänge beim Oberteil prüfen.</li>
+            <li>Bei Jacken Platz für eine zusätzliche Lage einplanen.</li>
+            <li>Bei Hosen Bundweite und Innenbeinlänge abgleichen.</li>
+          </ul>
+          <a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Hoodies und Pullover ansehen ↗</a>
+        </article>
+        <article class="topic">
+          <span class="number">03 / DETAILS</span>
+          <h3>Kleine Ergänzung.<br>Große Wirkung.</h3>
+          <p>Bei Accessoires von Stilvorbildern wie Gucci, Hermès, Dior oder Louis Vuitton lohnt sich der Blick auf Abmessungen, Material und Verschlüsse. Ein Markenname ersetzt keine Produktprüfung.</p>
+          <ul>
+            <li>Bei Caps den Kopfumfang berücksichtigen.</li>
+            <li>Bei Schmuck Länge, Verschluss und Material lesen.</li>
+            <li>Für Markenware belastbare Herkunftsnachweise verlangen.</li>
+          </ul>
+          <a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoires entdecken ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap feature" aria-labelledby="qc-title">
+      <figure>
+        <img src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit%2Cfl_lossy%2Ch_9000%2Cw_1200%2Cf_auto%2Cq_auto/1377899/645076_52137.jpg"
+             width="1200" height="1500"
+             loading="lazy" decoding="async"
+             alt="Straßenlook mit weißen Nike-Sneakers, schwarzer Hose und einer beigefarbenen Gucci-Schultertasche">
+      </figure>
+      <div class="feature-copy">
+        <p class="eyebrow">Bildkompetenz statt Bauchgefühl</p>
+        <h2 id="qc-title">Was QC-Fotos zeigen.<br>Und was offenbleibt.</h2>
+        <p>Mit „Sugargoo QC-Fotos“ sind Bilder zur Sichtprüfung gemeint. Sie können bei der Beurteilung sichtbarer Merkmale helfen; für Materialgefühl, Haltbarkeit oder Echtheit reichen Fotos allein nicht aus.</p>
+        <ol>
+          <li><strong>Gesamtansicht prüfen</strong>Stimmen Modell, Farbe und ausgewählte Variante mit der Beschreibung überein?</li>
+          <li><strong>Details vergrößern</strong>Achte auf Nähte, Kanten, Drucke, Verschlüsse und erkennbare Beschädigungen.</li>
+          <li><strong>Maße einordnen</strong>Bitte bei Unsicherheit um ein nachvollziehbares Maßbild. Licht und Perspektive können Farben und Proportionen verändern.</li>
+        </ol>
+        <p class="note">Redaktionelles Stilbild: keine QC-Aufnahme und kein Nachweis für einen konkreten Artikel.</p>
+      </div>
+    </section>
+
+    <section class="section wrap" aria-labelledby="check-title">
+      <div class="section-head">
+        <h2 id="check-title">Der kurze Vergleich<br>vor dem nächsten Klick.</h2>
+        <p>So lassen sich Produktlinks prüfen, ohne sich in langen Listen zu verlieren.</p>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <caption>Eine praktische Checkliste für Bekleidung, Schuhe und Accessoires</caption>
+          <thead>
+            <tr><th scope="col">Bereich</th><th scope="col">Darauf achten</th><th scope="col">Bei Unklarheit</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Produktlink</td><td>Ist die Seite erreichbar und zeigt sie den gesuchten Artikel?</td><td>Ursprünglichen Quelllink und Prüfdatum festhalten.</td></tr>
+            <tr><td>Variante</td><td>Farbe, Ausführung und Größe einzeln auswählen.</td><td>Keine Eigenschaften aus einem anderen Variantenfoto ableiten.</td></tr>
+            <tr><td>Passform</td><td>Zentimetermaße statt nur S, M, L oder EU-Größe vergleichen.</td><td>Eigene Kleidung als Maßreferenz verwenden.</td></tr>
+            <tr><td>Material</td><td>Zusammensetzung, Futter und Pflegehinweise lesen.</td><td>Fehlende Angaben vor dem Kauf erfragen.</td></tr>
+            <tr><td>Kosten</td><td>Artikelpreis, Versand und mögliche weitere Gebühren berücksichtigen.</td><td>Währung und aktuellen Gesamtbetrag prüfen.</td></tr>
+            <tr><td>Bestellbarkeit</td><td>Annahmebedingungen und Versandmöglichkeiten des Dienstes prüfen.</td><td>Markenbeschränkungen direkt beim Dienst klären.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section wrap" aria-labelledby="journal-title">
+      <div class="section-head">
+        <h2 id="journal-title">Zwei kleine Guides<br>für deine nächste Auswahl.</h2>
+        <p>Weniger offene Fragen. Mehr Übersicht in deiner persönlichen Merkliste.</p>
+      </div>
+      <div class="journal">
+        <article>
+          <p class="eyebrow">Guide / Produktlinks</p>
+          <h3>So wird aus einem Fund eine brauchbare Vergleichszeile</h3>
+          <p>Für deine Sugargoo Produktlinks genügen zunächst wenige Felder: Produktname, ursprünglicher Link, gewählte Variante, relevante Maße, Preiswährung und Prüfdatum. So erkennst du später, welche Angaben noch aktuell sind.</p>
+          <p>Ergänze eine kurze Notiz wie „Brustweite fehlt“ oder „Innenbeinlänge vergleichen“. Ein leerer Wert bleibt offen; er sollte nicht durch eine Schätzung ersetzt werden. Alte Produktlinks, geänderte Varianten und fehlende Detailbilder fallen dadurch schneller auf.</p>
+          <p>Prüfe das Angebot erneut, bevor du bezahlst. Eine gespeicherte Liste ist eine Arbeitshilfe, keine Bestätigung für Verfügbarkeit oder Preis.</p>
+        </article>
+        <article>
+          <p class="eyebrow">Guide / Garderobe</p>
+          <h3>Ein stimmiger Look braucht keine lange Einkaufsliste</h3>
+          <p>Beginne mit einem Schwerpunkt: auffällige Sneaker, eine besondere Jacke oder ein Accessoire. Stimme die übrigen Teile auf eine überschaubare Farbpalette und auf Kleidung ab, die du bereits trägst.</p>
+          <p>Bei Sets solltest du Oberteil und Hose getrennt vermessen. Für Trikots ist die gewünschte Passform wichtig; für Unterwäsche sind Material und genaue Größenangaben besonders relevant. Caps ergänzt du nach Kopfumfang statt nur nach Optik.</p>
+          <p>Dieser Sugargoo Einkaufsguide setzt auf eine kleine, nachvollziehbare Auswahl: lieber wenige passende Teile vergleichen, als viele ungeprüfte Links sammeln.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section wrap faq" aria-labelledby="faq-title">
+      <div>
+        <p class="eyebrow">Direkte Antworten</p>
+        <h2 id="faq-title">Häufig gefragt.</h2>
+        <p class="note">Die wichtigsten Begriffe und Entscheidungen rund um Produktlisten, Bilder und Bestellung.</p>
+      </div>
+      <div>
+        <details open>
+          <summary>Was ist ein Sugargoo spreadsheet?</summary>
+          <p>Ein Sugargoo spreadsheet ist eine strukturierte Sammlung von Produktlinks und Vergleichsangaben. Sie kann bei der Vorauswahl helfen, ersetzt aber weder die aktuelle Produktseite noch die Prüfung des konkreten Angebots.</p>
+        </details>
+        <details>
+          <summary>Ist diese Seite ein offizielles Angebot von Sugargoo?</summary>
+          <p>Nein. Diese Seite ist ein unabhängiger deutschsprachiger Leitfaden. Die Kategorie-Links führen zu hipobuyfind.com; eine offizielle Verbindung zu Sugargoo oder den genannten Marken wird nicht behauptet.</p>
+        </details>
+        <details>
+          <summary>Wie finde ich die passende Größe?</summary>
+          <p>Vergleiche die angegebenen Zentimetermaße mit einem gut passenden eigenen Kleidungsstück. Bei Schuhen helfen Fußlänge und eine modellspezifische Größentabelle. Eine Größenbezeichnung allein reicht nicht aus.</p>
+        </details>
+        <details>
+          <summary>Beweisen QC-Fotos die Echtheit eines Artikels?</summary>
+          <p>Nein. QC-Fotos können sichtbare Details wie Nähte, Farbe und Verarbeitung zeigen. Sie ersetzen keinen belastbaren Herkunfts- oder Echtheitsnachweis.</p>
+        </details>
+        <details>
+          <summary>Ist der Listenpreis bereits der Gesamtpreis?</summary>
+          <p>Nicht unbedingt. Berücksichtige zusätzlich gegebenenfalls Versand, Service- und Zahlungsgebühren sowie mögliche Einfuhrabgaben. Prüfe die aktuellen Angaben beim jeweiligen Anbieter.</p>
+        </details>
+        <details>
+          <summary>Kann ich jeden gefundenen Markenartikel über Sugargoo bestellen?</summary>
+          <p>Das lässt sich aus einer Produktliste nicht ableiten. Prüfe die aktuellen Annahmebedingungen, Markenbeschränkungen und Versandmöglichkeiten direkt beim jeweiligen Dienst, bevor du bezahlst.</p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="wrap closing" aria-label="Weiter zu HipobuyFind">
+      <div>
+        <h2>Dein nächster Fund beginnt mit Überblick.</h2>
+        <p>Kategorien öffnen, interessante Artikel auswählen und die Details in Ruhe vergleichen.</p>
+      </div>
+      <a class="button" href="https://www.hipobuyfind.com">HipobuyFind besuchen <span aria-hidden="true">↗</span></a>
+    </aside>
+  </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <a class="brand" href="https://www.hipobuyfind.com">hipobuyfind.com</a>
+      <p>Unabhängiger Informationsguide zum Suchthema Sugargoo spreadsheet. Marken werden zur Einordnung von Stilen genannt; eine offizielle Verbindung wird nicht behauptet. Bilder dienen der Inspiration und belegen weder Verfügbarkeit noch Echtheit. Maßgeblich sind die aktuellen Angaben des jeweiligen Anbieters.</p>
+    </div>
+  </footer>
+</body>
+</html>
